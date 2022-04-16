@@ -1,0 +1,118 @@
+/*======Resets======*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Open Sans";
+    color: white;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+button {
+    border: none;
+}
+
+input {
+    border: none;
+}
+
+/*======Action======*/
+
+body{
+    display: flex;
+    background-color: rgba(0, 128, 128, 0.399);
+}
+
+.container{
+    margin: 4em auto auto;
+    padding: 4em 10em;
+    border-radius: 1em;
+    background-color: teal;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h1 {
+    margin-bottom: 1em;
+}
+
+.input-box > form {
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+}
+
+#submit{
+    font-size: .75em;
+    font-weight: bold;
+    border-radius: .5em;
+    padding: 0 1em;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+#submit:hover{
+    cursor: pointer;
+}
+
+#text {
+    padding: .5em;
+    border-radius: .5em;
+}
+
+.item-list{
+    font-weight: bold;
+    margin: 2em 0 2em 1em;
+}
+
+.item-list > ul > li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.del-btn{
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+}
+
+#delete{
+    width: 100%;
+    font-weight: bold;
+    padding: .5em;
+    border-radius: .5em;
+}
+
+button:hover{
+    cursor: pointer;
+}
