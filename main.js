@@ -24,22 +24,9 @@ function addItem(e) {
     return false;
   }
 
-  let li = document.createElement("li");
-  let p = document.createElement("p");
-  let delBtn = document.createElement("button");
+  //transform input
   let itemList = document.getElementById("ul");
-
-  //Modifiy Delete Button
-  delBtn.textContent = "X";
-  delBtn.className = "del-btn";
-
-  //Chain input together
-  p.innerText = newItemValue;
-  li.appendChild(p);
-  li.appendChild(delBtn);
-
-  //Add chained input
-  itemList.appendChild(li);
+  itemList.innerHTML += `<li><p>${newItemValue}</p><button class="del-btn">X</button></li>`
 
   //Clear Input
   document.getElementById("text").value = "";
