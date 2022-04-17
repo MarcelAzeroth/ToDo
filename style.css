@@ -55,7 +55,7 @@ body{
 
 .container{
     margin: 4em auto auto;
-    padding: 4em 10em;
+    padding: 4em 4em;
     border-radius: 1em;
     background-color: teal;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

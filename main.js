@@ -9,8 +9,6 @@ let itemList = document.getElementById("ul");
 //Event Listeners
 form.addEventListener("submit", addItem);
 document.body.addEventListener("click", deleteItem)
- 
-   
 delAll.addEventListener("click", kill);
 
 
@@ -19,6 +17,7 @@ delAll.addEventListener("click", kill);
 
 function addItem(e){
     //Default
+
     e.preventDefault();
 
     //Variables
@@ -36,6 +35,7 @@ function addItem(e){
     p.appendChild(document.createTextNode(newItemValue));
     li.appendChild(p);
     li.appendChild(delBtn);
+    //Why cant you chain li.appendChild(p.appedChild(...))
 
     //Add chained input
     itemList.appendChild(li);
