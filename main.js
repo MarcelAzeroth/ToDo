@@ -17,11 +17,16 @@ delAll.addEventListener("click", kill);
 
 function addItem(e){
     //Default
-
     e.preventDefault();
 
     //Variables
     let newItemValue = document.getElementById("text").value;
+
+    //Check if string is empty. If empty, stop the function
+    if(!newItemValue.match(/([A-Za-z0-9])/)){
+        return false;
+    }
+
     let li = document.createElement("li");
     let p = document.createElement("p");
     let delBtn = document.createElement("button");
@@ -41,7 +46,7 @@ function addItem(e){
     itemList.appendChild(li);
 
     //Clear Input
-    document.getElementById("text").value = " ";
+    document.getElementById("text").value = "";
     //Why does this not work
     // newItemValue = " ";
 }
