@@ -5,60 +5,54 @@ let delBtn = document.querySelectorAll(".del-btn");
 let delAll = document.getElementById("delete");
 let itemList = document.getElementById("ul");
 
-
 //Event Listeners
 form.addEventListener("submit", addItem);
-document.body.addEventListener("click", deleteItem)
+document.body.addEventListener("click", deleteItem);
 delAll.addEventListener("click", kill);
-
-
 
 //Functions
 
-function addItem(e){
-    //Default
-    e.preventDefault();
+function addItem(e) {
+  //Default
+  e.preventDefault();
 
-    //Variables
-    let newItemValue = document.getElementById("text").value;
+  //Variables
+  let newItemValue = document.getElementById("text").value;
 
-    //Check if string is empty. If empty, stop the function
-    if(!newItemValue.match(/([A-Za-z0-9])/)){
-        return false;
-    }
+  //Check if string is empty. If empty, stop the function
+  if (!newItemValue.match(/([A-Za-z0-9])/)) {
+    return false;
+  }
 
-    let li = document.createElement("li");
-    let p = document.createElement("p");
-    let delBtn = document.createElement("button");
-    let itemList = document.getElementById("ul");
+  let li = document.createElement("li");
+  let p = document.createElement("p");
+  let delBtn = document.createElement("button");
+  let itemList = document.getElementById("ul");
 
-    //Modifiy Delete Button
-    delBtn.textContent = "X";
-    delBtn.className ="del-btn";
+  //Modifiy Delete Button
+  delBtn.textContent = "X";
+  delBtn.className = "del-btn";
 
-    //Chain input together
-    p.appendChild(document.createTextNode(newItemValue));
-    li.appendChild(p);
-    li.appendChild(delBtn);
-    //Why cant you chain li.appendChild(p.appedChild(...))
+  //Chain input together
+  p.innerText = newItemValue;
+  li.appendChild(p);
+  li.appendChild(delBtn);
 
-    //Add chained input
-    itemList.appendChild(li);
+  //Add chained input
+  itemList.appendChild(li);
 
-    //Clear Input
-    document.getElementById("text").value = "";
-    //Why does this not work
-    // newItemValue = " ";
+  //Clear Input
+  document.getElementById("text").value = "";
 }
 
-function deleteItem(e){
-    if(e.target.className === "del-btn"){
-       let li = e.target.parentElement;
-       itemList.removeChild(li);
-    };
-
+function deleteItem(e) {
+  if (e.target.className !== "del-btn") {
+    return false;
+  }
+  let li = e.target.parentElement;
+  itemList.removeChild(li);
 }
 
-function kill(e){
-    itemList.textContent = " ";
+function kill(e) {
+  itemList.textContent = "";
 }
